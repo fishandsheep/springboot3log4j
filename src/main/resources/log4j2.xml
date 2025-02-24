@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO">
     <Appenders>
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-        </Console>
 
-        <File name="FileAppend" fileName="${dir_url}/fileLog.log" bufferedIO="true" immediateFlush="true">
+        <File name="FileAppend" fileName="log/fileLog.log">
+            <ThresholdFilter level="INFO">
+            </ThresholdFilter>
             <PatternLayout>
-                <pattern>${myPattern}</pattern>
+                <pattern>${%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}</pattern>
             </PatternLayout>
         </File>
     </Appenders>
     <Loggers>
-        <Root level="INFO">
-            <AppenderRef ref="Console"/>
+        <Root level="DEBUG">
+           <!-- <AppenderRef ref="Console"/>-->
             <AppenderRef ref="FileAppend"/>
         </Root>
     </Loggers>

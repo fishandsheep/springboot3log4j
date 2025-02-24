@@ -19,18 +19,29 @@ public class Springboot3log4jApplication {
 
 
     @GetMapping("/log4j")
-    public String log4j() {
+    public Persion log4j() {
         Persion persion = new Persion();
         persion.setId(1);
         persion.setName("zdx");
         persion.setBirthday("1989-01-01");
         persion.setAge(19);
 
-        for (int i = 0; i < 10; i++) {
+        //error
+        for (int i = 0; i < 3; i++) {
+            log.error("The persion is {}", persion);
+        }
+
+        //info
+        for (int i = 0; i < 20; i++) {
             log.info("The persion is {}", persion);
         }
 
-        return "hello";
+        //debug
+        for (int i = 0; i < 200; i++) {
+            log.debug("The persion is {}", persion);
+        }
+
+        return persion;
     }
 
 }
