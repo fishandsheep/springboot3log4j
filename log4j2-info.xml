@@ -2,7 +2,7 @@
 <Configuration status="INFO">
     <Appenders>
 
-        <File name="FileAppend" fileName="log/fileLog.log">
+        <File name="FileAppend" fileName="log/fileLog-info.log">
             <ThresholdFilter level="INFO">
             </ThresholdFilter>
             <PatternLayout>
