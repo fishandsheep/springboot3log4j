@@ -2,9 +2,10 @@
 <Configuration status="INFO">
   <Properties>
     <Property name="LOG_PATH">${sys:user.home}/applog</Property>
+    <Property name="APP_NAME">spring4log</Property>
   </Properties>
   <Appenders>
-    <File fileName="${LOG_PATH}/spring4log/fileLog-debug.log" name="FileAppend">
+    <File fileName="${LOG_PATH}/${APP_NAME}/fileLog-debug.log" name="FileAppend">
       <ThresholdFilter level="INFO"></ThresholdFilter>
       <PatternLayout>
         <pattern>${%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}</pattern>
